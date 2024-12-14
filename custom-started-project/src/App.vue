@@ -3,6 +3,11 @@ export default {
   data() {
     return {
       numberOfClicks: 0,
+      dynamic: [{
+        button: {
+          id: 99,
+        },
+      }],
     };
   },
   methods: {
@@ -11,6 +16,9 @@ export default {
     },
     decrement() {
       this.numberOfClicks -= 1;
+    },
+    changeButtonId() {
+      this.dynamic[0].button.id = Date.now();
     },
   },
 };
@@ -26,16 +34,25 @@ export default {
     number of times!
   </h2>
 
-  <button @click="increment">
-    increment
-  </button>
-  <button @click="decrement">
-    decrement
+  <div class="btnWrapper">
+    <button @click="increment">
+      increment
+    </button>
+    <button @click="decrement">
+      decrement
+    </button>
+  </div>
+  <button :id="dynamic[0].button.id" @click="changeButtonId">
+    Dynamic ID button: {{ dynamic[0].button.id }}
   </button>
 </template>
 
 <style>
 .myTitle{
   color: red;
+}
+.btnWrapper{
+  margin-bottom: 2rem;
+
 }
 </style>
