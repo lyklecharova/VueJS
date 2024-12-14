@@ -28,7 +28,10 @@ export default {
   <h1 class="myTitle">
     Hello World
   </h1>
-  <h2 :class="numberOfClicks > 20 ? 'btnGreen' : ' btnClicks' ">
+  <h2
+    class="btnClicks"
+    :class="[numberOfClicks > 20 ? 'green' : '']"
+  >
     the button was clicked
     {{ numberOfClicks }}
     number of times!
