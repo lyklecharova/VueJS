@@ -30,9 +30,12 @@ export default {
   </h1>
   <h2
     class="btnClicks"
-    :class="{
-      green: numberOfClicks > 20,
-    }"
+    :class="[
+      {
+        green: numberOfClicks > 20,
+      },
+      `clicks-${numberOfClicks}`,
+    ]"
   >
     the button was clicked
     {{ numberOfClicks }}
