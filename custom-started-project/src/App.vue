@@ -28,7 +28,7 @@ export default {
   <h1 class="myTitle">
     Hello World
   </h1>
-  <h2>
+  <h2 :class="numberOfClicks > 20 ? 'btnGreen' : ' btnClicks' ">
     the button was clicked
     {{ numberOfClicks }}
     number of times!
@@ -53,6 +53,11 @@ export default {
 }
 .btnWrapper{
   margin-bottom: 2rem;
-
+}
+.btnClicks{
+  color: lightsalmon;
+}
+.btnGreen{
+  color:green;
 }
 </style>
