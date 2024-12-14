@@ -47,7 +47,7 @@ export default {
   </button>
 </template>
 
-<style>
+<style scoped>
 .myTitle{
   color: red;
 }
