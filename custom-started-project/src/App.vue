@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      numberOfClicks: 0,
+      numberOfClicks: 10,
       dynamic: [{
         button: {
           id: 99,
@@ -30,7 +30,9 @@ export default {
   </h1>
   <h2
     class="btnClicks"
-    :class="[numberOfClicks > 20 ? 'green' : '']"
+    :class="{
+      green: numberOfClicks > 20,
+    }"
   >
     the button was clicked
     {{ numberOfClicks }}
@@ -59,6 +61,9 @@ export default {
 }
 .btnClicks{
   color: lightsalmon;
+}
+.btnClicks.green{
+  color: green;
 }
 .btnGreen{
   color:green;
