@@ -185,7 +185,7 @@ export default {
     Event modifiers
   </button>
 
-  <article>
+  <article> 
     <h2>Search field</h2>
     <input type="text" @input="onInputChange">
 
